@@ -1,0 +1,6 @@
+.venv/
+*.csv
+pycache/
+.env
+snapshots.json
+daily_snapshots.json
