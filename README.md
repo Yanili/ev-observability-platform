@@ -8,3 +8,4 @@ data — before they reach stakeholders.
 
 ## Progress Log
 -Week 0: environment set up, repo created
+-day 1: Python list as time-series; found the weekend dip pattern
