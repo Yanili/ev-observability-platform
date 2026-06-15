@@ -10,3 +10,4 @@ data — before they reach stakeholders.
 -Week 0: environment set up, repo created
 -day 1: Python list as time-series; found the weekend dip pattern
 -day 2 : dict = one fact-table row; build computed snapshot metrics
+-day 3 : resuable functions = testable dax mesaure
