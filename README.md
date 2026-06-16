@@ -12,3 +12,4 @@ Day 1: Python list as time-series; found the weekend dip pattern
 Day 2 : dict = one fact-table row; build computed snapshot metrics
 Day 3 : resuable functions = testable dax mesaure
 Day 4 : migration forensics - caught 5 planted data quality bugs with pandas
+Day 5 : moving-average anomaly detection; volume monitoring beats row checks
