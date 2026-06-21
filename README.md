@@ -14,3 +14,6 @@ Day 3 : resuable functions = testable dax mesaure
 Day 4 : migration forensics - caught 5 planted data quality bugs with pandas
 Day 5 : moving-average anomaly detection; volume monitoring beats row checks
 Day 6 : aggregates raw ev charging sessions into daily metrics, computes 7-day moving aerages,flags volume anomalies catches a simulated 70% outage day
+
+Week 2 : Spark Fundamentals
+day 1 : Spark DataFrames;schema inference risk after migraion
