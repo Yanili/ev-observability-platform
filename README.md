@@ -18,3 +18,4 @@ Day 6 : aggregates raw ev charging sessions into daily metrics, computes 7-day m
 Week 2 : Spark Fundamentals
 day 1 : Spark DataFrames;schema inference risk after migraion
 day 2 : lazy evalutaion;transformations vs actions
+day 3 : groupBy in Spark;wht segment-level monitoring matters
