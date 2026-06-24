@@ -20,3 +20,4 @@ day 1 : Spark DataFrames;schema inference risk after migraion
 day 2 : lazy evalutaion;transformations vs actions
 day 3 : groupBy in Spark;wht segment-level monitoring matters
 day 4 : window functions = dax time intelligence, but testable
+day 5 : Delta time travel;incremental vs full refresh
