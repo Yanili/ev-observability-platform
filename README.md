@@ -23,3 +23,6 @@ day 4 : window functions = dax time intelligence, but testable
 day 5 : Delta time travel;incremental vs full refresh
 Weekend : What's built so far" : Historical Snapshot Pipeline
         Spark + Delta, partitioned daily metrics with MA7 and variance, incremental loading
+
+Week 3 : Data Quailty Engineering
+Day 1 & 2 : DQ rules 1-5 - duplicates, future dates, negative revenue, status whitelist and null criticals;all planted bugs caught
