@@ -28,3 +28,4 @@ Week 3 : Data Quailty Engineering
 Day 1 & 2 : DQ rules 1-5 - duplicates, future dates, negative revenue, status whitelist and null criticals;all planted bugs caught
 Day 3 : DQ runner; loop rules into list;spark.createdataframe;timestamped results to Delta
 Day 4 : critical vs warning label; rasie exception to stop pipeline
+Day 5 : custom rule from real migration experience - [check_positive_kwh]
