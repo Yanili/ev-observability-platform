@@ -29,3 +29,4 @@ Day 1 & 2 : DQ rules 1-5 - duplicates, future dates, negative revenue, status wh
 Day 3 : DQ runner; loop rules into list;spark.createdataframe;timestamped results to Delta
 Day 4 : critical vs warning label; rasie exception to stop pipeline
 Day 5 : custom rule from real migration experience - [check_positive_kwh]
+Weekend : ** Data Engine** (week3/): 6 automated rules with critical/warning severity, results persisted to Delta
