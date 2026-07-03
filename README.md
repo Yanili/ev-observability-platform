@@ -32,5 +32,10 @@ Day 5 : custom rule from real migration experience - [check_positive_kwh]
 Weekend : ** Data Engine** (week3/): 6 automated rules with critical/warning severity, results persisted to Delta
 
 Week 4 Day1 : it branches - created first feature branch, merged locally
+
+How DQ engineering works , 6 rules for session, energy, reveune, date etc, 5 critical and 1 warning label
+result will be saved in dq summary
+
+Day 2 : Pull request - pushed branch to GitHub, opened and mergerd first PR
 How DQ engineering works , 6 rules for session, energy, reveune, date etc, 5 critical and 1 warning label
 result will be saved in dq summary
