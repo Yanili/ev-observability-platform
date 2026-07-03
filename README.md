@@ -39,4 +39,6 @@ result will be saved in dq summary
 Day 2 : Pull request - pushed branch to GitHub, opened and mergerd first PR
 How DQ engineering works , 6 rules for session, energy, reveune, date etc, 5 critical and 1 warning label ->  result will be saved and showed in dq summary
 
+Day3 : Merge conflicts - created and resolved a conflict in VS code, learned merge -- abort
+
 
