@@ -44,14 +44,11 @@ Day 4 : critical vs warning label; rasie exception to stop pipeline
 Day 5 : custom rule from real migration experience - [check_positive_kwh]
 Weekend : ** Data Engine** (week3/): 6 automated rules with critical/warning severity, results persisted to Delta
 
-Week 4 Day1 : it branches - created first feature branch, merged lgocally
-
-How DQ engineering works , 6 rules for session, energy, reveune, date etc, 5 critical and 1 warning label
-result will be saved in dq summary
-
+Week 4 
+Day 1 : it branches - created first feature branch, merged lgocally
 Day 2 : Pull request - pushed branch to GitHub, opened and mergerd first PR
-How DQ engineering works , 6 rules for session, energy, reveune, date etc, 5 critical and 1 warning label ->  result will be saved and showed in dq summary
-
-Day3 : Merge conflicts - created and resolved a conflict in VS code, learned merge -- abort
+Day 3 : Merge conflicts - created and resolved a conflict in VS code, learned merge -- abort
+Day 4 : gitignore aduit before going public - fixed __pycache__typo, remove a tracked .pyc with git rm-cached 
+Day 5 : README v2 - portfolio landing page (problem statment, architecture sketch,teach stack);repo made public 
 
 
