@@ -1,10 +1,23 @@
-# ev-observability-platform
 Yani's project
+An 8-week build: from BI analyst to analytics engineer.
+Detects data quality failures and metric anomalies in EV charging data — before they reach stakeholders
 # EV Charging Data Observability Platform
 
-An 8-week build: from BI analyst to analytics engineer.
-Detects data quality failures and metric anomalies in EV charging
-data — before they reach stakeholders.
+
+## Project statement
+A platform migration left data quality issue slipping through unnoticed until stakeholders stopped trusting the numbers This project catches those failures and metric anomalies at the source, before they even reach a dashboard.
+
+## Architecture sketch 
+raw csv -> Spark/Data -> DQ rules -> (coming : dbt -> CI/CD -> Power BI)
+
+## What's built so far 
+DQ engine - 6 automated rules (duplicates, future dates, negative revenue, invalid status,null criticals) with critical/warning severity that blocks the pipeline on critical failures 
+Anomaly detection - using 7-day moving averages and window functions - caught a simulated 70% outage day that simple row-count checks missed 
+Historical snapshot pipeline - Spark + Delta, with incremental loading and variance/trend monitoring
+Coming next: dbt models+tests on Snowflake, CI/CD via GitHub Actions, Power BI reporting
+
+## Teach stack
+Python, PySpark, Delta Lake, (dbt,Snowflake,GitHub Actions - coming)
 
 ## Progress Log
 Week 0: environment set up, repo created
