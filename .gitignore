@@ -5,3 +5,6 @@ __pycache__/
 snapshots.json
 daily_snapshots.json
 logs/
+target/
+dbt_packages/
+logs/
