@@ -3,7 +3,7 @@ version: 2
 models:
   - name: fct_observability
     description: "Consumption-ready fact table at charger-day grain.Surfaces all metrics with day-over-day variance, variance % and anomaly flags (threshold:50%) for BI consumption."
-columns:
+    columns:
       - name: METRIC_DATE
         description: "The date for which the metrics are calculated."
       - name: CHARGER_ID
