@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_ev_sessions
+    description: "This model cleanses and stages the raw EV sessions data."
+    columns:
+      - name: SESSION_ID
+        description: "The unique identifier for the EV session."
+        tests:
+          - not_null
+          - unique
+      - name: CHARGER_ID
+        description: "The unique identifier for the charger."
+        tests:
+          - not_null
+      - name: SESSION_DATE
+        description: "The date and time when the session started."
+        tests:
+          - not_null
+      - name: CHARGER_STATUS
+        description: "The status of the charger during the session." 
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['completed', 'failed', 'interrupted']
