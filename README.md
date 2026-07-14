@@ -19,6 +19,8 @@ dbt project : 3-layer model architecture (staging -> intermediate -> fact) with 
 - Intermediate: 'int_daily_metrics' (pre charger aggregation), 'int_variance_matrics(day-over-day variance via LAG)
 - Fact: fct_observability' - consumption-ready tabel with variance%,anomaly flags(>50% absolute change) and new-charger detection
 - Every model and column documented via '.yml' descriptions; full linage graph generated with 'dbt docs'
+
+## Coming next:
 Coming next: dbt tests on Snowflake, CI/CD via GitHub Actions, Power BI reporting
 Noted : dim_chargers deliberately excludes a small number of charger_id
 present in session data, simulating an unregistered-asset scenario
