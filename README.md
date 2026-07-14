@@ -20,6 +20,9 @@ dbt project : 3-layer model architecture (staging -> intermediate -> fact) with 
 - Fact: fct_observability' - consumption-ready tabel with variance%,anomaly flags(>50% absolute change) and new-charger detection
 - Every model and column documented via '.yml' descriptions; full linage graph generated with 'dbt docs'
 Coming next: dbt tests on Snowflake, CI/CD via GitHub Actions, Power BI reporting
+Noted : dim_chargers deliberately excludes a small number of charger_id
+present in session data, simulating an unregistered-asset scenario
+This demonstrates the relationships test catching orphan records
 
 ## Teach stack
 Python, PySpark, Delta Lake, (dbt,Snowflake,GitHub Actions - coming)
@@ -32,6 +35,7 @@ Day 3 : resuable functions = testable dax mesaure
 Day 4 : migration forensics - caught 5 planted data quality bugs with pandas
 Day 5 : moving-average anomaly detection; volume monitoring beats row checks
 Day 6 : aggregates raw ev charging sessions into daily metrics, computes 7-day moving aerages,flags volume anomalies catches a simulated 70% outage day
+
 
 Week 2 : Spark Fundamentals
 day 1 : Spark DataFrames;schema inference risk after migraion
