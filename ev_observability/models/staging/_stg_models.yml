@@ -13,6 +13,10 @@ models:
         description: "The unique identifier for the charger."
         tests:
           - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_chargers')
+                field: CHARGER_ID
       - name: SESSION_DATE
         description: "The date and time when the session started."
         tests:
