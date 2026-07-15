@@ -31,20 +31,20 @@ prev_total_kwh_delivered,
 variance_kwh_delivered,
 kwh_delivered_variance_pct,
 case when kwh_delivered_variance_pct is null then 'no_baseline' 
-else case when abs(kwh_delivered_variance_pct) > 50 then 'yes' -- 50% is a heuristic threshold, to be defined with statistical methods baselining
+else case when abs(kwh_delivered_variance_pct) > {{ var('anomaly_threshold') }} then 'yes' -- {{ var('anomaly_threshold') }} is a heuristic threshold, to be defined with statistical methods baselining
 else 'no' end end as kwh_is_anomaly,
 total_sessions,
 prev_total_sessions,
 variance_sessions,
 sessions_variance_pct,
 case when sessions_variance_pct is null then 'no_baseline' 
-else case when abs(sessions_variance_pct) > 50 then 'yes' -- 50% is a heuristic threshold, to be defined with statistical methods baselining
+else case when abs(sessions_variance_pct) > {{ var('anomaly_threshold') }} then 'yes' -- {{ var('anomaly_threshold') }} is a heuristic threshold, to be defined with statistical methods baselining
 else 'no' end end as sessions_is_anomaly,
 total_revenue,
 prev_total_revenue,
 variance_revenue,
 revenue_variance_pct,
 case when revenue_variance_pct is null then 'no_baseline' 
-else case when abs(revenue_variance_pct) > 50 then 'yes' -- 50% is a heuristic threshold, to be defined with statistical methods baselining
+else case when abs(revenue_variance_pct) > {{ var('anomaly_threshold') }} then 'yes' -- {{ var('anomaly_threshold') }} is a heuristic threshold, to be defined with statistical methods baselining
 else 'no' end end as revenue_is_anomaly
 from _var_pct
