@@ -62,4 +62,18 @@ Day 3 : Merge conflicts - created and resolved a conflict in VS code, learned me
 Day 4 : gitignore aduit before going public - fixed __pycache__typo, remove a tracked .pyc with git rm-cached 
 Day 5 : README v2 - portfolio landing page (problem statment, architecture sketch,teach stack);repo made public 
 
+### Anomaly threshold tuning
+The anomaly flag was initially set at a 50% day-over-day variance threshold.
+On first run this flagged ~55% of all charger-days as anomalous — effectively
+alert fatigue, where everything is flagged and nothing is actionable. EV charging
+demand fluctuates heavily day-to-day, so a 50% swing is normal, not exceptional.
+After analysing the variance distribution across thresholds (50% / 100% / 200% /
+500%), the threshold was tightened to 500%, bringing the anomaly rate down to ~3%
+of charger-days — a level where flagged events genuinely warrant investigation.
+The threshold is parameterised as a dbt variable (anomaly_threshold in
+dbt_project.yml) rather than hardcoded, so it can be adjusted per environment
+or stakeholder without editing model SQL.
+*Known refinement:* a fixed percentage threshold is a heuristic. A future
+iteration could use statistical baselining (e.g. flagging deviations beyond N
+standard deviations) to adapt per-charger rather than applying one global cutoff.
 
