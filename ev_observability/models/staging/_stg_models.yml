@@ -7,23 +7,35 @@ models:
       - name: SESSION_ID
         description: "The unique identifier for the EV session."
         tests:
-          - not_null
-          - unique
+          - not_null:
+              config:
+                severity: error
+          - unique:
+              config:
+                severity: error
       - name: CHARGER_ID
         description: "The unique identifier for the charger."
         tests:
-          - not_null
+          - not_null:
+              config:
+                severity: error
           - relationships:
               arguments:
                 to: ref('dim_chargers')
                 field: CHARGER_ID
+              config:
+                severity: error
       - name: SESSION_DATE
         description: "The date and time when the session started."
         tests:
-          - not_null
+          - not_null:
+              config:
+                severity: error
       - name: CHARGER_STATUS
         description: "The status of the charger during the session." 
         tests:
           - accepted_values:
               arguments:
                 values: ['completed', 'failed', 'interrupted']
+              config:
+                severity: error
