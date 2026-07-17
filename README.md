@@ -23,7 +23,7 @@ raw csv -> Spark/Data -> DQ rules -> (coming : dbt -> CI/CD -> Power BI)
 
 
 ## Coming next:
-Coming next: dbt tests on Snowflake, CI/CD via GitHub Actions, Power BI reporting
+Coming  CI/CD via GitHub Actions, Power BI reporting
 Noted : dim_chargers deliberately excludes a small number of charger_id
 present in session data, simulating an unregistered-asset scenario
 This demonstrates the relationships test catching orphan records
