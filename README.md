@@ -11,14 +11,16 @@ A platform migration left data quality issue slipping through unnoticed until st
 raw csv -> Spark/Data -> DQ rules -> (coming : dbt -> CI/CD -> Power BI)
 
 ## What's built so far 
-DQ engine - 6 automated rules (duplicates, future dates, negative revenue, invalid status,null criticals) with critical/warning severity that blocks the pipeline on critical failures 
-Anomaly detection - using 7-day moving averages and window functions - caught a simulated 70% outage day that simple row-count checks missed 
-Historical snapshot pipeline - Spark + Delta, with incremental loading and variance/trend monitoring
-dbt project : 3-layer model architecture (staging -> intermediate -> fact) with full documentation and lineage.
+**DQ engine** - 6 automated rules (duplicates, future dates, negative revenue, invalid status,null criticals) with critical/warning severity that blocks the pipeline on critical failures 
+**Anomaly detection** - using 7-day moving averages and window functions - caught a simulated 70% outage day that simple row-count checks missed 
+**Historical snapshot pipeline** - Spark + Delta, with incremental loading and variance/trend monitoring
+**dbt project** : 3-layer model architecture (staging -> intermediate -> fact) with full documentation and lineage.
 - Staging: 'stg_ev_sessions' - cleaned session-level data from raw source
 - Intermediate: 'int_daily_metrics' (pre charger aggregation), 'int_variance_matrics(day-over-day variance via LAG)
 - Fact: fct_observability' - consumption-ready tabel with variance%,anomaly flags(>50% absolute change) and new-charger detection
 - Every model and column documented via '.yml' descriptions; full linage graph generated with 'dbt docs'
+**dbt test suite**: 10+ tests(generic + custom + relationships) catching every planned migration bug, with severity tiers
+
 
 ## Coming next:
 Coming next: dbt tests on Snowflake, CI/CD via GitHub Actions, Power BI reporting
