@@ -19,6 +19,7 @@ jobs:
       SNOWFLAKE_ROLE:      ${{ secrets.SNOWFLAKE_ROLE }}
       SNOWFLAKE_WAREHOUSE: ${{ secrets.SNOWFLAKE_WAREHOUSE }}
       SNOWFLAKE_DATABASE:  ${{ secrets.SNOWFLAKE_DATABASE }}
+      # 確保此路徑相對於 working-directory (即 ./ev_observability/profiles)
       DBT_PROFILES_DIR:    ./profiles
 
     steps:
@@ -27,7 +28,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: 'pip' 
+          cache: 'pip' # 加快後續 CI 執行速度
 
       - name: Install dbt
         run: pip install dbt-core dbt-snowflake
