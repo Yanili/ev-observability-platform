@@ -21,6 +21,7 @@ raw csv -> Spark/Data -> DQ rules -> (coming : dbt -> CI/CD -> Power BI)
 - Every model and column documented via '.yml' descriptions; full linage graph generated with 'dbt docs'
 **dbt test suite**: 10+ tests(generic + custom + relationships) catching every planned migration bug, with severity tiers
 ** CI/CD**: CI: every pull request runs'dbt build' against Snowflake via GitHub Actions.
+CI verification
 ## Coming next:
 Coming  CI/CD via GitHub Actions, Power BI reporting
 Noted : dim_chargers deliberately excludes a small number of charger_id
