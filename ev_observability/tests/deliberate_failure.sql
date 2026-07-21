@@ -7,5 +7,5 @@
 -- This file is never merged into main - the PR is closed after the red check is captured.
 
 select session_id 
-from {{ ref('stg_session') }}
+from {{ ref('stg_ev_sessions') }}
 limit 10
