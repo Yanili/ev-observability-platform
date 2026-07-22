@@ -41,3 +41,7 @@ jobs:
 
       - name: dbt build
         run: dbt build --target ci
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "::error::dbt build failed. data quality tests did not pass. Review the failing tests above before merging"
