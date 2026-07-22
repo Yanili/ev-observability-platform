@@ -20,8 +20,14 @@ raw csv -> Spark/Data -> DQ rules -> (coming : dbt -> CI/CD -> Power BI)
 - Fact: fct_observability' - consumption-ready tabel with variance%,anomaly flags(>50% absolute change) and new-charger detection
 - Every model and column documented via '.yml' descriptions; full linage graph generated with 'dbt docs'
 **dbt test suite**: 10+ tests(generic + custom + relationships) catching every planned migration bug, with severity tiers
-** CI/CD**: CI: every pull request runs'dbt build' against Snowflake via GitHub Actions.
+Generic@ 'no null','unique','accepted_value','relationship'
+Custom (signualr) : 'no_future_dates','no_negative_revenue','no_negative_energy','assert_no_anomalies'
+Seed: 'dim_chargers' as a charger master referene for foreign-key validation 
+
+**CI/CD pipeline**: (.github\workflows\dbt_ci.yml)
+every pull request runs'dbt build' against Snowflake via GitHub Actions.
 CI verification
+CI failures notify via GitHub email 
 ## Coming next:
 Coming  CI/CD via GitHub Actions, Power BI reporting
 Noted : dim_chargers deliberately excludes a small number of charger_id
