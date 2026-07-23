@@ -28,7 +28,7 @@ Seed: 'dim_chargers' as a charger master referene for foreign-key validation
 every pull request runs'dbt build' against Snowflake via GitHub Actions.
 CI verification
 CI failures notify via GitHub email 
-Add branch protection
+Add branch protection with active mode
 ## Coming next:
 Coming  CI/CD via GitHub Actions, Power BI reporting
 Noted : dim_chargers deliberately excludes a small number of charger_id
