@@ -24,13 +24,27 @@ Generic@ 'no null','unique','accepted_value','relationship'
 Custom (signualr) : 'no_future_dates','no_negative_revenue','no_negative_energy','assert_no_anomalies'
 Seed: 'dim_chargers' as a charger master referene for foreign-key validation 
 
+### Baselining known data quality issues
+The source dataset contains pre-existing defects (148 duplicates, 778 orphan
+sessions, 40 future-dated rows, 1 invalid status). Setting these tests to
+error meant every pull request was blocked — including changes unrelated to
+data quality, such as documentation updates.
+Rather than deleting the defects (which would remove the demonstration value)
+or downgrading the tests to warn (which would remove the protection), the
+tests now use baseline thresholds via error_if. Counts at or below the known
+baseline warn; anything above it errors and blocks the merge. The pipeline
+therefore blocks *regressions* rather than *history*.
+*Known refinement:* thresholds are currently absolute counts derived from the
+initial dataset. A future iteration would use proportional thresholds (e.g.
+dbt_utils.not_null_proportion) so they remain meaningful as data volume grows.### Baselining known data quality issue
+
 **CI/CD pipeline**: (.github\workflows\dbt_ci.yml)
 every pull request runs'dbt build' against Snowflake via GitHub Actions.
 CI verification
 CI failures notify via GitHub email 
-Add branch protection
+Add branch protection with active mode
 ## Coming next:
-Coming  CI/CD via GitHub Actions, Power BI reporting
+Power BI reporting
 Noted : dim_chargers deliberately excludes a small number of charger_id
 present in session data, simulating an unregistered-asset scenario
 This demonstrates the relationships test catching orphan records

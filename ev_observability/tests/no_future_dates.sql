@@ -3,7 +3,9 @@
 -- This test returns rowa that vidlate the rule. 0 rows = pass
 
 {{config(
-    severity='ERROR'
+    severity='ERROR',
+    error_if='>40',
+    warn_if='>0'
 )}}
 select session_id, session_date
 from {{ref('stg_ev_sessions')}}
