@@ -10,9 +10,13 @@ models:
           - not_null:
               config:
                 severity: error
+                error_if: ">149"
+                warn_if: ">0"
           - unique:
               config:
                 severity: error
+                error_if: ">149"
+                warn_if: ">0"
       - name: CHARGER_ID
         description: "The unique identifier for the charger."
         tests:
@@ -25,6 +29,8 @@ models:
                 field: CHARGER_ID
               config:
                 severity: error
+                error_if: ">778"
+                warn_if: ">0"
       - name: SESSION_DATE
         description: "The date and time when the session started."
         tests:
@@ -39,3 +45,5 @@ models:
                 values: ['completed', 'failed', 'interrupted']
               config:
                 severity: error
+                error_if: ">1"
+                warn_if: ">0"
